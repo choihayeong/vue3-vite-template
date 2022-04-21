@@ -1,2 +1,11 @@
 # vue-proj-setting
-vue project setting with SCSS for a development environment
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+vue serve
+```
