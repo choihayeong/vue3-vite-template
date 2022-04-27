@@ -1,0 +1,55 @@
+@charset "UTF-8";
+@font-face {
+	font-family:'Noto Sans KR';
+	font-weight:300;
+	src:
+        url(~@/assets/font/NotoSans-Light.woff) format('woff');
+}
+@font-face {
+	font-family:'Noto Sans KR';
+	font-weight:400;
+	src:
+        url(~@/assets/font/NotoSans-Regular.woff) format('woff');
+}
+@font-face {
+	font-family:'Noto Sans KR';
+	font-weight:500;
+	src:
+        url(~@/assets/font/NotoSans-Medium.woff) format('woff');
+}
+@font-face {
+	font-family:'Noto Sans KR';
+	font-weight:bold;
+	src:
+        url(~@/assets/font/NotoSans-Bold.woff) format('woff');
+}
+@font-face {
+	font-family:'Raleway';
+	font-weight:300;
+	src:
+        url(~@/assets/font/raleway-light.woff) format('woff');
+}
+@font-face {
+	font-family:'Raleway';
+	font-weight:400;
+	src:
+        url(~@/assets/font/raleway-regular.woff) format('woff');
+}
+@font-face {
+	font-family:'Raleway';
+	font-weight:500;
+	src:
+        url(~@/assets/font/raleway-medium.woff) format('woff');
+}
+@font-face {
+	font-family:'Raleway';
+	font-weight:600;
+	src:
+        url(~@/assets/font/raleway-semibold.woff) format('woff');
+}
+@font-face {
+	font-family:'Raleway';
+	font-weight:bold;
+	src:
+        url(~@/assets/font/raleway-bold.woff) format('woff');
+}
