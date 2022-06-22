@@ -1,15 +1,7 @@
+<script setup></script>
+
 <template>
-	<div id="app">
-		<router-view></router-view>
-	</div>
+	<div>Hello Vue3</div>
 </template>
 
-<style lang="scss">
-@import "./scss/common.scss";
-</style>
-
-<script>
-	export default {
-		name: "App",
-	}
-</script>
+<style></style>
