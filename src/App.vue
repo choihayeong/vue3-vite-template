@@ -1,15 +1,28 @@
 <template>
-	<div id="app">
-		<router-view></router-view>
+	<div>
+		<p>{{ reactiveMessage }}</p>
+
+		<button v-on:click="updateRactiveMessage">Update Message</button>
 	</div>
 </template>
 
-<style lang="scss">
-@import "./scss/common.scss";
-</style>
-
 <script>
-	export default {
-		name: "App",
-	}
+import { ref } from "vue";
+
+export default {
+	setup() {
+		const reactiveMessage = ref("Hello Stranger");
+
+		const updateRactiveMessage = () => {
+			reactiveMessage.value = reactiveMessage.value + "!";
+		};
+
+		return {
+			reactiveMessage,
+			updateRactiveMessage,
+		};
+	},
+};
 </script>
+
+<style lang="scss" scoped></style>
