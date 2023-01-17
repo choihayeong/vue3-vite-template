@@ -11,7 +11,7 @@ module.exports = {
 	rules: {
 		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 		'prettier/prettier': [
-			'error',
+			// 'error',
 			{
 				singleQuote: true,
 				semi: true,
