@@ -1,14 +1,15 @@
 <template>
 	<div>
 		<ul>
+			<!-- <li v-for="(item, index) in ingredientsData" :key="item.id">{{ item.ingredient }}</li> -->
 			<template v-for="(item, index) in evenItems" :key="item.id">
 				<!-- <li v-if="item.id % 2 === 0">
-					ID: {{ item.id }}
-					Index: {{ index }} : {{ item.message }}
+					ID: {{ item.id }},
+					Index: {{ index }} : {{ item.ingredient }}
 				</li> -->
 				<li>
-					ID: {{ item.id }}
-					Index: {{ index }} : {{ item.message }}
+					ID: {{ item.id }},
+					Index: {{ index }} : {{ item.ingredient }}
 				</li>
 			</template>
 		</ul>
@@ -26,21 +27,21 @@ import { reactive, computed } from 'vue';
 
 export default {
 	setup () {
-		const items = reactive([
-			{id: 1, message: 'apple'},
-			{id: 2, message: 'banana'},
-			{id: 3, message: 'carrot'},
-			{id: 4, message: 'durian'},
-		]),
-			evenItems = computed(() => items.filter((item) => item.id % 2 === 0)),
-			myObject = reactive({
-				greeting: 'Hello Stranger',
-				userName: 'Brooksy',
-				newDate: new Date(),
-			});
+		const ingredientsData = reactive([
+			{id: 1, ingredient: 'apple'},
+			{id: 2, ingredient: 'banana'},
+			{id: 3, ingredient: 'carrot'},
+			{id: 4, ingredient: 'dark chocolate'}
+		]);
+		const evenItems = computed(() => ingredientsData.filter((item, index) => item.id % 2 === 0));
+		const myObject = reactive({
+			songName: 'Never Too Late',
+			singer: 'Three Days Grace',
+			releaseDate: '2006'
+		})
 
 		return {
-			items,
+			ingredientsData,
 			evenItems,
 			myObject
 		}

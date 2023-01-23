@@ -1,27 +1,29 @@
 <template>
 	<div>
-		<h2 v-if="visible">Hello Stranger!</h2>
-		<h2 v-else>Booooooom! :P</h2>
-		<button @click="visible = !visible">toggle</button>
+		<h1 v-if="isVisible">Hello Stranger!</h1>
+		<h1 v-else>It's over! :P</h1>
+		<button type="button" @click="isVisible = !isVisible">Toggle</button>
 		<hr>
-		<button @click="type = 'A'">A</button>
-		<button @click="type = 'B'">B</button>
-		<button @click="type = 'C'">C</button>
-		<button @click="type = 'D'">D</button>
+		<button type="button" @click="type = 'A'">A</button>
+		<button type="button" @click="type = 'B'">B</button>
+		<button type="button" @click="type = 'C'">C</button>
+		<button type="button" @click="type = 'D'">D</button>
 
 		<h2 v-if="type === 'A'">Apple</h2>
 		<h2 v-else-if="type === 'B'">Banana</h2>
 		<h2 v-else-if="type === 'C'">Carrot</h2>
 		<h2 v-else>All about fruits</h2>
 		<hr>
-		<template v-if="visible">
-			<h1>Logo</h1>
-			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque enim vel quia autem quaerat. Facere fugit veritatis, vitae at, voluptatum iste temporibus maiores cumque dolorum tempore id velit ex eaque?</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, optio repellat odio deserunt, dicta eaque ratione atque saepe eligendi hic cupiditate eveniet. Et consequatur amet totam voluptate illum minima soluta.</p>
+		<template v-if="isVisible">
+			<div>
+				<h1>Logo</h1>
+				<h2>Title</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad exercitationem quas accusamus atque error magni est vitae possimus, esse laboriosam id animi. Voluptate vero, harum laboriosam corporis nesciunt saepe tempora.</p>
+			</div>
 		</template>
 		<hr>
-		<h1 v-show="isShow">Title</h1>
-		<button @click="isShow = !isShow">show toggle</button>
+		<h2 v-show="isShow">One Smile</h2>
+		<button type="button" @click="isShow = !isShow">Show Toggle</button>
 	</div>
 </template>
 
@@ -30,12 +32,12 @@ import { ref } from 'vue';
 
 export default {
 	setup () {
-		const visible = ref(true),
+		const isVisible = ref(true),
 			type = ref('A'),
 			isShow = ref(true);
 
 		return {
-			visible,
+			isVisible,
 			type,
 			isShow
 		}
