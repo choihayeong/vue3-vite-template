@@ -12,6 +12,12 @@ export default {
 	setup () {
 		const message = ref('Hello Strangers!'),
 			reverseMessage = ref('');
+
+		/* watch(message, (newData) => {
+			reverseMessage.value = newData.split('').reverse().join('');
+		}, {
+			immediate: true
+		}) */	
 		const printReverseMessage = () => {
 			console.log('immediate');
 			reverseMessage.value = message.value.split('').reverse().join('');
