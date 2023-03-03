@@ -1,28 +1,16 @@
 <template>
-	<div>
-		<p>{{ reactiveMessage }}</p>
+  <div>
+    <TheNav />
 
-		<button v-on:click="updateRactiveMessage">Update Message</button>
-	</div>
+    <TheView />
+  </div>
 </template>
 
-<script>
-import { ref } from "vue";
-
-export default {
-	setup() {
-		const reactiveMessage = ref("Hello Stranger");
-
-		const updateRactiveMessage = () => {
-			reactiveMessage.value = reactiveMessage.value + "!";
-		};
-
-		return {
-			reactiveMessage,
-			updateRactiveMessage,
-		};
-	},
-};
+<script setup>
+import TheNav from './components/TheNav.vue';
+import TheView from './components/TheView.vue';
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>
