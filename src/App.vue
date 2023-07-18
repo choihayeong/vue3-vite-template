@@ -1,10 +1,10 @@
 <template>
 	<div>
 		<!-- navbar -->
-		<TheNav />
+		<the-nav></the-nav>
 		<!-- // -->
 		<!-- contents -->
-		<TheView />
+		<the-view></the-view>
 		<!-- // -->
 	</div>
 </template>
