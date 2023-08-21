@@ -1,6 +1,6 @@
 <template>
     <div>
-        Git Test component!
+        Git Test component! 2222
     </div>
 </template>
 
