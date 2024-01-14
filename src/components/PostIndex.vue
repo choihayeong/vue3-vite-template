@@ -7,7 +7,7 @@
 
             <div class="row g-3">
                 <div v-for="(item, index) in postData" :key="item.id" class="col col-4">
-                    <AppCard 
+                    <PostItem 
                         :title="item.title" 
                         :contents="item.contents" 
                         :is-like="item.isLike"
@@ -41,7 +41,7 @@
 
 <script>
 import { ref, reactive } from 'vue';
-import AppCard from '@/components/AppCard.vue';
+import PostItem from '@/components/PostItem.vue';
 import PostCreate from '@/components/PostCreate.vue';
 import LabelInput from '@/components/LabelInput.vue';
 import LabelTitle from '@/components/LabelTitle.vue';
@@ -49,7 +49,7 @@ import UserName from '@/components/UserName.vue';
 
 export default {
     components: {
-        AppCard,
+        PostItem,
         PostCreate,
         LabelInput,
     },

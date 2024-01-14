@@ -220,3 +220,108 @@ export default {
 }
 </script>
 ```
+
+### Slots 심화
+
+#### Dynamic Slot Named
+
+- 데이터 바인딩을 이용하여 동적 변경
+- 아래 예시에서 초기 화면에 `#header` 영역에 `Dynamic Slot........` 메시지가 나오고,  `slotArgs`의 값이 `"footer"`로 변경이 되면 `#footer` 영역에 `Dynamic Slot........` 메시지가 나오게 된다.
+
+```vue
+<template>
+    <!-- ... -->
+
+    <AppCard>
+        <template #[slotArgs]>Dynamic Slot........</template>
+        <!-- <template #header>Header Area</template> -->
+        <!-- <template #default>Default Area</template> -->
+        <!-- <template #footer>Footer Area</template> -->
+    </AppCard>
+
+    <!-- // ... -->
+</template>
+
+<script setup>
+import {ref} from "vue";
+import AppCard from "@/components/AppCard.vue";
+
+const slotArgs = ref("header");
+</script>
+```
+
+#### Render Scope
+
+- slot 콘텐츠는 자식 컴포넌트에 데이터를 부모(상위) 컴포넌트에 접근할 수 없지만 `<slot>` 요소를 사용함으로써 slot 콘텐츠를 전달할 수 있음
+
+```vue
+<template>
+    <!-- AppCard : child component -->
+    <div class="app-card card">
+        <slot :slot-message="slotMessage" hello-message="안뇽 :)"></slot>
+    </div>
+</template>
+
+<script setup>
+import {ref} from "vue";
+
+const slotMessage = ref("This is Slot Message");
+</script>
+```
+
+```vue
+<template>
+    <!-- parent component -->
+    <AppCard v-slot="{slotMessage, helloMessage}">
+        {{ slotMessage }} <br>
+        AppCard 컴포넌트입니다. <br>
+        {{ helloMessage }}
+    </AppCard>
+
+    <!-- 아래 처럼 작성 가능 -->
+    <AppCard>
+        <template #default="{slotMessage, helloMessage}">
+            {{ slotMessage }} <br>
+            AppCard 컴포넌트입니다. <br>
+            {{ helloMessage }}
+        </template>
+    </AppCard>
+</template>
+
+<script setup>
+import {ref} from "vue";
+import AppCard from "@/components/AppCard.vue";
+
+const slotArgs = ref("header");
+</script>
+```
+
+#### `v-if="$slots.default"`을 computed로 표현
+
+```vue
+<template>
+    <!-- AppCard : child component -->
+    <div class="app-card card">
+        <header v-if="hasSlot">
+            <slot name="header"></slot>
+        </header>
+        
+        <slot v-if="$slots.default"></slot>
+    </div>
+</template>
+
+<script>
+import {computed} from "vue";
+
+export default {
+    setup(props, {slots}) {
+        // context.slots을 구조분해 할당
+        const hasHedar = computed(() => !!slots.default);
+
+        return {
+            hasHedar,
+        };
+    }
+}
+</script>
+```
