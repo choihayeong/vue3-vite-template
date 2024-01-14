@@ -74,6 +74,8 @@ import 'bootstrap/dist/js/bootstrap.js';
 createApp(App).mount('#app');
 ```
 
+<hr />
+
 ### Non-Prop 속성 (fallthrough 속성)
 
 #### 속성 상속 비활성화
@@ -220,6 +222,8 @@ export default {
 }
 </script>
 ```
+
+<hr />
 
 ### Slots 심화
 
