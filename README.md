@@ -3,7 +3,7 @@ Vue3 공부 및 settings
 
 ## vue 설치
 - Vite로 프로젝트 구성
-```
+```bash
 npm init vue@latest
 ```
 <img src="https://user-images.githubusercontent.com/90609686/222661061-93b7f118-f55f-4e0e-a25a-a5b624230bb3.png">
