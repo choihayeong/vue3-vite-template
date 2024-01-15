@@ -19,7 +19,7 @@ npm run dev
 <details>
     
 ### (Option).eslintrc.cjs 추가
-```
+```json
 rules: {
 	'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
 	'no-unused-vars': 'off',
@@ -43,7 +43,7 @@ rules: {
 단축키 Ctrl + comma(,) setting 창에서 'eslint' 검색 <br> 
 Eslint: Validate를 찾아 Edit in setting.json 버튼 눌러 이동 후 다음 설정 추가
 
-```
+```json
 "eslint.validate": [
 	"javascript",
 	"javascriptreact",
@@ -64,7 +64,7 @@ Eslint: Validate를 찾아 Edit in setting.json 버튼 눌러 이동 후 다음 
 
 ## vue3 + bootstrap5
 - bootstrap5 활용법 (보통 vue는 vuetify를 사용함)
-```
+```bash
 npm install bootstrap
 ```
 - 설치 후 main.js에 다음과 같이 import
