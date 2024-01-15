@@ -17,25 +17,25 @@
 		<input v-bind="attrs" />
 		<hr />
 		<h2>Javascript</h2>
-		{{ defaultMsg.split('').reverse().join('') }}
-		{{ isDisabled ? 'Disabled' : 'Able' }}
+		{{ defaultMsg.split("").reverse().join("") }}
+		{{ isDisabled ? "Disabled" : "Able" }}
 	</div>
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 export default {
 	setup() {
 		/* Interpolation */
-		const defaultMsg = ref('Hi there!');
+		const defaultMsg = ref("Hi there!");
 		/* v-html */
-		const rawHtml = ref('<strong>Strong Tag For Message</strong>');
+		const rawHtml = ref("<strong>Strong Tag For Message</strong>");
 		/* Attr Binding */
-		const dynamicTitle = ref('Good to see ya!');
+		const dynamicTitle = ref("Good to see ya!");
 		const isDisabled = ref(false);
 		const attrs = ref({
-			type: 'number',
+			type: "number",
 			value: 10001011110,
 			disabled: false,
 		});
@@ -50,4 +50,3 @@ export default {
 	},
 };
 </script>
-

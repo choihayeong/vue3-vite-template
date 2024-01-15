@@ -13,41 +13,41 @@
 </template>
 
 <script>
-import { computed, reactive, ref } from 'vue';
+import { computed, reactive, ref } from "vue";
 
 export default {
 	setup() {
 		/* userInfo */
 		const userInfo = reactive({
-				name: 'Brooksy',
-				items: ['Mistic Wind', 'Lobe', 'Nambi Shield'],
+				name: "Brooksy",
+				items: ["Mistic Wind", "Lobe", "Nambi Shield"],
 			}),
 			hasItem = computed(() => {
 				// computed
-				console.log('computed');
-				return userInfo.items.length > 0 ? 'Yes 👍' : 'No 😞';
+				console.log("computed");
+				return userInfo.items.length > 0 ? "Yes 👍" : "No 😞";
 			}),
 			isItem = () => {
 				// method
-				console.log('method');
-				return userInfo.items.length > 0 ? 'Yes 👍' : 'No 😞';
+				console.log("method");
+				return userInfo.items.length > 0 ? "Yes 👍" : "No 😞";
 			};
 
 		/* counter, fullName */
 		const counter = ref(0),
-			firstName = ref('Brooksy'),
-			lastName = ref('Belbin'),
+			firstName = ref("Brooksy"),
+			lastName = ref("Belbin"),
 			fullName = computed({
 				get() {
 					return `${firstName.value} ${lastName.value}`;
 				},
 				set(value) {
-					[firstName.value, lastName.value] = value.split(' ');
+					[firstName.value, lastName.value] = value.split(" ");
 				},
 			});
 
-		console.log('Print Console', fullName.value);
-		fullName.value = 'Tanith White'; // computed는 readonly
+		console.log("Print Console", fullName.value);
+		fullName.value = "Tanith White"; // computed는 readonly
 
 		return {
 			userInfo,

@@ -10,22 +10,18 @@
 </template>
 
 <script>
-import TheNav from './components/TheNav.vue';
-import TheView from './components/TheView.vue';
+import TheNav from "./components/TheNav.vue";
+import TheView from "./components/TheView.vue";
 
 export default {
 	components: {
 		TheNav,
-		TheView
+		TheView,
 	},
-	setup () {
-		
-
-		return {}
-	}
-}
+	setup() {
+		return {};
+	},
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

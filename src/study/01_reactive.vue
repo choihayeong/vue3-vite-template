@@ -1,14 +1,12 @@
 <template>
 	<div>
 		<button v-on:click="increment">Click {{ state.count }}</button>
-		<button v-on:click="increment">
-			Deep Click {{ state.deep.count }}
-		</button>
+		<button v-on:click="increment">Deep Click {{ state.deep.count }}</button>
 	</div>
 </template>
 
 <script>
-import { reactive } from 'vue';
+import { reactive } from "vue";
 
 export default {
 	setup() {

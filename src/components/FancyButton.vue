@@ -1,18 +1,18 @@
 <template>
-    <button class="fancy-btn">
-        <slot :fancy-message="fancyMessage">Default Button</slot>
-    </button>
+	<button class="fancy-btn">
+		<slot :fancy-message="fancyMessage">Default Button</slot>
+	</button>
 </template>
 
 <script setup>
-import {ref} from "vue";
+import { ref } from "vue";
 
 const fancyMessage = ref("팬시 버튼 메시지");
 </script>
 
 <style lang="scss" scoped>
 .fancy-btn {
-    color: #fff;
+	color: #fff;
 	background: linear-gradient(315deg, #42d392 25%, #647eff);
 	border: none;
 	padding: 5px 12px;

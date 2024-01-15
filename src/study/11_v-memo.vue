@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div v-memo="[protein,fat]">
+		<div v-memo="[protein, fat]">
 			<p>carb: {{ carb }}g</p>
 			<p>protein: {{ protein }}g</p>
 			<p>fat: {{ fat }}g</p>
@@ -17,17 +17,19 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 export default {
-	setup () {
+	setup() {
 		const carb = ref(300),
 			protein = ref(40),
 			fat = ref(20);
 
 		return {
-			carb, protein, fat
-		}
-	}
-}
+			carb,
+			protein,
+			fat,
+		};
+	},
+};
 </script>

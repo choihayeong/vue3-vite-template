@@ -1,27 +1,28 @@
 /* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution');
+require("@rushstack/eslint-patch/modern-module-resolution");
 
 module.exports = {
 	root: true,
 	extends: [
-		'plugin:vue/vue3-essential',
-		'eslint:recommended',
-		'@vue/eslint-config-prettier',
+		"plugin:vue/vue3-essential",
+		"eslint:recommended",
+		"@vue/eslint-config-prettier",
+		"prettier",
 	],
 	rules: {
-		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-		'no-unused-vars': 'off',
-		'prettier/prettier': [
-			// 'error',
+		"no-console": process.env.NODE_ENV === "production" ? "error" : "off",
+		"no-unused-vars": "off",
+		"prettier/prettier": [
+			"error",
 			{
-				singleQuote: true,
+				singleQuote: false,
 				semi: true,
 				useTabs: true,
-				tabWidth: 4,
-				trailingComma: 'all',
+				tabWidth: 2,
+				trailingComma: "all",
 				printWidth: 80,
 				bracketSpacing: true,
-				arrowParens: 'avoid',
+				arrowParens: "avoid",
 			},
 		],
 	},

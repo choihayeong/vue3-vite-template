@@ -1,38 +1,31 @@
 <template>
-    <label class="form-label" id="child-id" for="">
-        {{ label }}
-    </label>
-    <input
-        v-model="value"
-        type="text"
-        class="form-control"
-        v-bind="$attrs"
-    >
+	<label class="form-label" id="child-id" for="">
+		{{ label }}
+	</label>
+	<input v-model="value" type="text" class="form-control" v-bind="$attrs" />
 </template>
 
 <script>
-import { computed } from 'vue';
+import { computed } from "vue";
 
 export default {
-    props: ['modelValue', 'label'],
-    emits: ['update:modelValue'],
-    setup (props, { emit }) {
-        const value = computed({
-            get() {
-                return props.modelValue;
-            },
-            set(value) {
-                emit('update:modelValue', value);
-            }
-        })
+	props: ["modelValue", "label"],
+	emits: ["update:modelValue"],
+	setup(props, { emit }) {
+		const value = computed({
+			get() {
+				return props.modelValue;
+			},
+			set(value) {
+				emit("update:modelValue", value);
+			},
+		});
 
-        return {
-            value
-        }
-    }
-}
+		return {
+			value,
+		};
+	},
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

@@ -6,22 +6,22 @@
 </template>
 
 <script>
-import { ref, watch } from 'vue';
+import { ref, watch } from "vue";
 
 export default {
-	setup () {
-		const message = ref('Hello Strangers!'),
-			reverseMessage = ref('');
+	setup() {
+		const message = ref("Hello Strangers!"),
+			reverseMessage = ref("");
 
 		/* watch(message, (newData) => {
 			reverseMessage.value = newData.split('').reverse().join('');
 		}, {
 			immediate: true
-		}) */	
+		}) */
 		const printReverseMessage = () => {
-			console.log('immediate');
-			reverseMessage.value = message.value.split('').reverse().join('');
-		}
+			console.log("immediate");
+			reverseMessage.value = message.value.split("").reverse().join("");
+		};
 		watch(message, printReverseMessage);
 		printReverseMessage();
 
@@ -37,8 +37,8 @@ export default {
 
 		return {
 			message,
-			reverseMessage
-		}
-	}
-}
+			reverseMessage,
+		};
+	},
+};
 </script>

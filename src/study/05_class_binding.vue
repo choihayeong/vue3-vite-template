@@ -1,13 +1,9 @@
 <template>
 	<div>
-		<div 
-			class="text" 
-			:class="[
-				isActive ? 'active' : '', 
-				errorClass, 
-				classObject,
-			]"
-		> 
+		<div
+			class="text"
+			:class="[isActive ? 'active' : '', errorClass, classObject]"
+		>
 			Hello Stranger!
 		</div>
 		<!-- <div class="text" :class="isActive ? 'active' : '', hasError ? 'text--error' : ''">Hello Stranger!</div> -->
@@ -17,10 +13,10 @@
 </template>
 
 <script>
-import { ref, reactive, computed } from 'vue';
+import { ref, reactive, computed } from "vue";
 
 export default {
-	setup () {
+	setup() {
 		const isActive = ref(true),
 			hasError = ref(false);
 		// const classObject = reactive({
@@ -30,16 +26,16 @@ export default {
 		const classObject = computed(() => {
 			return {
 				active: true,
-				'text--error': false,
-				'text--warning': true,
-			}
+				"text--error": false,
+				"text--warning": true,
+			};
 		});
-		const activeClass = ref('active'),
-			errorClass = ref('text--error');
+		const activeClass = ref("active"),
+			errorClass = ref("text--error");
 
 		const toggle = () => {
-			isActive.value = !isActive.value
-		}
+			isActive.value = !isActive.value;
+		};
 
 		return {
 			isActive,
@@ -47,15 +43,15 @@ export default {
 			classObject,
 			activeClass,
 			errorClass,
-			toggle
-		}
-	}
-}
+			toggle,
+		};
+	},
+};
 </script>
 
 <style lang="scss" scoped>
 .active {
-	font-weight:bold;
+	font-weight: bold;
 }
 .text {
 	&--error {

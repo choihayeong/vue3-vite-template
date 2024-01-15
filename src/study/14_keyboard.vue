@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<input type="text" @keyup.ctrl.enter="addTodo">
+		<input type="text" @keyup.ctrl.enter="addTodo" />
 		<ul>
 			<li v-for="(item, index) in todos" :key="index">
 				{{ item }}
@@ -10,10 +10,10 @@
 </template>
 
 <script>
-import { reactive } from 'vue';
+import { reactive } from "vue";
 
 export default {
-	setup () {
+	setup() {
 		const todos = reactive([]);
 
 		const addTodo = event => {
@@ -22,14 +22,14 @@ export default {
 			// 	todos.push(event.target.value);
 			// }
 			todos.push(event.target.value);
-			event.target.value = '';
+			event.target.value = "";
 			event.target.focus();
-		} 
+		};
 
 		return {
 			todos,
-			addTodo
-		}
-	}
-}
+			addTodo,
+		};
+	},
+};
 </script>

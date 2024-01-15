@@ -10,17 +10,17 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref } from "vue";
 
 export default {
-	setup () {
-		const msg = ref('Hello'),
-			htmlStr = ref('<strong>Hello Stranger!</strong>')
+	setup() {
+		const msg = ref("Hello"),
+			htmlStr = ref("<strong>Hello Stranger!</strong>");
 
 		return {
 			msg,
-			htmlStr
-		}
-	}
-}
+			htmlStr,
+		};
+	},
+};
 </script>
