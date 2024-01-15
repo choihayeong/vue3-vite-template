@@ -21,21 +21,21 @@ npm run dev
 ### (Option).eslintrc.cjs 추가
 ```
 rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-unused-vars': 'off',
-    'prettier/prettier': [
-        'error',
-        {
-            singleQuote: true,
-            semi: true,
-            useTabs: true,
-            tabWidth: 2,
-            trailingComma: 'all',
-            printWidth: 80,
-            bracketSpacing: true,
-            arrowParens: 'avoid',
-        },
-    ],
+	'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+	'no-unused-vars': 'off',
+	'prettier/prettier': [
+		'error',
+		{
+			singleQuote: true,
+			semi: true,
+			useTabs: true,
+			tabWidth: 2,
+			trailingComma: 'all',
+			printWidth: 80,
+			bracketSpacing: true,
+			arrowParens: 'avoid',
+		},
+	],
 },
 ```
 
@@ -45,16 +45,16 @@ Eslint: Validate를 찾아 Edit in setting.json 버튼 눌러 이동 후 다음 
 
 ```
 "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "html",
-    "vue",
-    "markdown"
+	"javascript",
+	"javascriptreact",
+	"typescript",
+	"typescriptreact",
+	"html",
+	"vue",
+	"markdown"
 ],
 "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true 
+	"source.fixAll.eslint": true 
 }
 ```
 </details>
@@ -88,18 +88,18 @@ createApp(App).mount('#app');
 - 자식 컴포넌트에서 `inheritAttrs: false` 옵션을 설정하면 됨.
 ```vue
 <template>
-    <!-- child component.vue -->
-    <div>
-        <button class="btn btn-primary" type="button">My Button</button>
-    </div>
+	<!-- child component.vue -->
+	<div>
+		<button class="btn btn-primary" type="button">My Button</button>
+	</div>
 </template>
 
 <script>
 export default {
-    inheritAttrs: false,
-    setup() {
-        return {};
-    }
+	inheritAttrs: false,
+	setup() {
+		return {};
+	}
 }
 </script>
 ```
@@ -110,37 +110,37 @@ export default {
 
 ```vue
 <template>
-    <!-- parent component.vue -->
-    <main>
-        <MyButton class="any-class" id="anyId" @click="sayHello" />
-    </main>
+	<!-- parent component.vue -->
+	<main>
+		<MyButton class="any-class" id="anyId" @click="sayHello" />
+	</main>
 </template>
 
 <script setup>
-    const sayHello = () => {
-        alert("Hi there :)");
-    };
+	const sayHello = () => {
+		alert("Hi there :)");
+	};
 </script>
 ```
 
 ```vue
 <template>
-    <!-- MyButton.vue : child component.vue -->
-    <div>
-        <button class="btn btn-primary" type="button" v-bind="$attrs">My Button</button>
-    </div>
+	<!-- MyButton.vue : child component.vue -->
+	<div>
+		<button class="btn btn-primary" type="button" v-bind="$attrs">My Button</button>
+	</div>
 </template>
 
 <script>
 export default {
-    inheritAttrs: false,
-    setup(prop, context) {
-        console.log(context.attrs.class);
-        console.log(context.attrs.id);
-        console.log(context.attrs.onClick);
+	inheritAttrs: false,
+	setup(prop, context) {
+		console.log(context.attrs.class);
+		console.log(context.attrs.id);
+		console.log(context.attrs.onClick);
 
-        return {};
-    }
+		return {};
+	}
 }
 </script>
 ```
@@ -152,38 +152,38 @@ export default {
 
 ```vue
 <template>
-    <!-- parent component.vue -->
-    <main>
-        <LabelInput label="이름" data-custom="any" />
-    </main>
+	<!-- parent component.vue -->
+	<main>
+		<LabelInput label="이름" data-custom="any" />
+	</main>
 </template>
 ```
 
 ```vue
 <template>
-    <!-- child component.vue -->
-    <label>{{ label }}</label>
-    <input v-model="value" type="text" v-bind="$attrs" />
+	<!-- child component.vue -->
+	<label>{{ label }}</label>
+	<input v-model="value" type="text" v-bind="$attrs" />
 </template>
 
 <script>
 import {computed} from 'vue';
 
 export default {
-    props: ['modelValue', 'label'],
-    emits: ['update:modelValue'],
-    setup(props, {emit}) {
-        const value = computed({
-            get() {
-                return props.modelValue;
-            },
-            set(value) {
-                emit('update:modelValue', value);
-            }
-        })
+	props: ['modelValue', 'label'],
+	emits: ['update:modelValue'],
+	setup(props, {emit}) {
+		const value = computed({
+			get() {
+				return props.modelValue;
+			},
+			set(value) {
+				emit('update:modelValue', value);
+			}
+		});
 
-        return {value};
-    }
+		return {value};
+	}
 }
 </script>
 ```
@@ -192,39 +192,39 @@ export default {
 
 ```vue
 <template>
-    <!-- parent component.vue -->
-    <main>
-        <MyButton class="any-class" @click="sayHello" />
-    </main>
+	<!-- parent component.vue -->
+	<main>
+		<MyButton class="any-class" @click="sayHello" />
+	</main>
 </template>
 
 <script setup>
 import MyButton from "./MyButton.vue";
 
 const sayHello = () => {
-    alert("안녕하세요.");
+  alert("안녕하세요.");
 };
 </script>
 ```
 
 ```vue
 <template>
-    <!-- MyButton.vue : child component.vue -->
-    <div>
-        <button class="btn btn-primary" type="button" @click="sayHello">My Button</button>
-    </div>
+	<!-- MyButton.vue : child component.vue -->
+	<div>
+		<button class="btn btn-primary" type="button" @click="sayHello">My Button</button>
+	</div>
 </template>
 
 <script>
 export default {
-    emits: ['click'],
-    setup(prop, {emit}) {
-        const sayHello = () => {
-            emit("click");
-        }
+	emits: ['click'],
+	setup(prop, {emit}) {
+		const sayHello = () => {
+				emit("click");
+		};
 
-        return {sayHello};
-    }
+		return {sayHello};
+	}
 }
 </script>
 ```
@@ -243,16 +243,16 @@ export default {
 
 ```vue
 <template>
-    <!-- ... -->
+	<!-- ... -->
 
-    <AppCard>
-        <template #[slotArgs]>Dynamic Slot........</template>
-        <!-- <template #header>Header Area</template> -->
-        <!-- <template #default>Default Area</template> -->
-        <!-- <template #footer>Footer Area</template> -->
-    </AppCard>
+	<AppCard>
+		<template #[slotArgs]>Dynamic Slot........</template>
+		<!-- <template #header>Header Area</template> -->
+		<!-- <template #default>Default Area</template> -->
+		<!-- <template #footer>Footer Area</template> -->
+	</AppCard>
 
-    <!-- // ... -->
+	<!-- // ... -->
 </template>
 
 <script setup>
@@ -269,10 +269,10 @@ const slotArgs = ref("header");
 
 ```vue
 <template>
-    <!-- AppCard : child component -->
-    <div class="app-card card">
-        <slot :slot-message="slotMessage" hello-message="안뇽 :)"></slot>
-    </div>
+	<!-- AppCard : child component -->
+	<div class="app-card card">
+		<slot :slot-message="slotMessage" hello-message="안뇽 :)"></slot>
+	</div>
 </template>
 
 <script setup>
@@ -284,21 +284,21 @@ const slotMessage = ref("This is Slot Message");
 
 ```vue
 <template>
-    <!-- parent component -->
-    <AppCard v-slot="{slotMessage, helloMessage}">
-        {{ slotMessage }} <br>
-        AppCard 컴포넌트입니다. <br>
-        {{ helloMessage }}
-    </AppCard>
+	<!-- parent component -->
+	<AppCard v-slot="{slotMessage, helloMessage}">
+		{{ slotMessage }} <br>
+		AppCard 컴포넌트입니다. <br>
+		{{ helloMessage }}
+	</AppCard>
 
-    <!-- 아래 처럼 작성 가능 -->
-    <AppCard>
-        <template #default="{slotMessage, helloMessage}">
-            {{ slotMessage }} <br>
-            AppCard 컴포넌트입니다. <br>
-            {{ helloMessage }}
-        </template>
-    </AppCard>
+	<!-- 아래 처럼 작성 가능 -->
+	<AppCard>
+		<template #default="{slotMessage, helloMessage}">
+			{{ slotMessage }} <br>
+			AppCard 컴포넌트입니다. <br>
+			{{ helloMessage }}
+		</template>
+	</AppCard>
 </template>
 
 <script setup>
@@ -313,28 +313,28 @@ const slotArgs = ref("header");
 
 ```vue
 <template>
-    <!-- AppCard : child component -->
-    <div class="app-card card">
-        <header v-if="hasSlot">
-            <slot name="header"></slot>
-        </header>
-        
-        <slot v-if="$slots.default"></slot>
-    </div>
+	<!-- AppCard : child component -->
+	<div class="app-card card">
+		<header v-if="hasSlot">
+			<slot name="header"></slot>
+		</header>
+		
+		<slot v-if="$slots.default"></slot>
+	</div>
 </template>
 
 <script>
 import {computed} from "vue";
 
 export default {
-    setup(props, {slots}) {
-        // context.slots을 구조분해 할당
-        const hasHedar = computed(() => !!slots.default);
+	setup(props, {slots}) {
+		// context.slots을 구조분해 할당
+		const hasHedar = computed(() => !!slots.default);
 
-        return {
-            hasHedar,
-        };
-    }
+		return {
+			hasHedar,
+		};
+	}
 }
 </script>
 ```
