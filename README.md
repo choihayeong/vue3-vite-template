@@ -1,5 +1,5 @@
 # vue-project-setting
-- Vue3 공부를 위한 Vue3 Setting 정리
+Vue3 공부 및 settings
 
 ## vue 설치
 - Vite로 프로젝트 구성
@@ -15,6 +15,9 @@ npm run format
 npm run dev
 ```
 
+### Optional Settings
+<details>
+    
 ### (Option).eslintrc.cjs 추가
 ```
 rules: {
@@ -54,6 +57,7 @@ Eslint: Validate를 찾아 Edit in setting.json 버튼 눌러 이동 후 다음 
     "source.fixAll.eslint": true 
 }
 ```
+</details>
 
 ## vue3 study
 - vue3 기본 문법
@@ -78,6 +82,8 @@ createApp(App).mount('#app');
 
 ### Non-Prop 속성 (fallthrough 속성)
 
+<details>
+    
 #### 속성 상속 비활성화
 - 자식 컴포넌트에서 `inheritAttrs: false` 옵션을 설정하면 됨.
 ```vue
@@ -222,10 +228,13 @@ export default {
 }
 </script>
 ```
+</details>
 
 <hr />
 
 ### Slots 심화
+
+<details>
 
 #### Dynamic Slot Named
 
@@ -329,3 +338,4 @@ export default {
 }
 </script>
 ```
+</details>
