@@ -1,5 +1,5 @@
 {
-  "name": "learn-vue3",
+  "name": "vue3-vite-template",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
